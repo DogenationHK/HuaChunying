@@ -17,7 +17,6 @@ var sentences = [
     "#N如果#B，不仅将损害中方利益，损害中国和#N关系，也将严重损害#N自身的利益。",
     "#N如果一意孤行，坚持#B，最终必将搬起石头砸自己的脚。",
     "#N#B是搬起石头砸自己的脚。",
-
     "我们要正告#N，任何外国政府和势力都无权干预中国内政。",
     "#N的图谋注定失败。",
     "中国政府反对任何外部势力干预中国事务的决心坚定不移，维护国家主权、安全、发展利益的决心坚定不移。",
@@ -67,7 +66,7 @@ var countries =
     .split("、")
 
 function shuffle(sentences){
-    for (var i =sentences.length+1;i>0;i--){
+    for (var i =sentences.length;i>0;i--){
         var random_pos=Math.floor(Math.random(i))
         var tmp=sentences[i-1]
         sentences[i-1]=sentences[random_pos]
@@ -81,9 +80,8 @@ function gengshuang(n, b) {
     var answer = "<b>耿爽：</b>"
     var index = Math.floor((Math.random() * head.length))
     answer += head[index]
-	
-	shuffle(sentences)
-	index=0
+    shuffle(sentences)
+    index=0
     for (i = 0; i < paragraphs; i++) {
         length = Math.floor((Math.random() * 3 + 3))
         for (j = 0; j < length; j++) {
