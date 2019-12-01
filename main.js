@@ -49,7 +49,11 @@ var sentence_negative = [
     "#N此次的貌似公允再次暴露出他们的是非不分和虚伪面目，他们的口头正义也再次暴露出他们的双重标准和别有用心。",
     "我们正告#N认清形势，悬崖勒马，立即停止干涉中国内政，以免引火烧身、自食苦果。",
     "中方正告#N，任何企图破坏中国社会繁荣稳定、阻碍中国发展的图谋都不会得逞，到头来只会搬起石头砸自己的脚。",
-    "我们敦促#N悬崖勒马，否则必将自食恶果，勿谓言之不预也！"
+    "我们敦促#N悬崖勒马，否则必将自食恶果，勿谓言之不预也！",
+    "我这样的#N，能和中国相提并论吗！",
+    "#N的一些政客和官员隔三差五就要出来叫一叫、跳一跳,攻击抹黑中国，他们的拙劣表演充分暴露出其不可告人的险恶用心和政治企图。",
+    "在国际社会大家庭里,中国始终维护和平,促进发展,坚守道义,同各国携手构建人类命运共同体。#N却损人利己,唯我独尊,背信弃义,在世界上大搞顺我者昌,逆我者亡。",
+    "#N#B干预干涉中国内政，严重违反国际法和国际关系基本准则，是赤裸裸的霸权行径。"
 ]
 
 var head_positive = [
@@ -116,6 +120,15 @@ var countries =
     .split("、")
 
 var head, sentences;
+function shuffle(sentences){
+    for (var i =sentences.length;i>0;i--){
+        var random_pos=Math.floor(Math.random(i))
+        var tmp=sentences[i-1]
+        sentences[i-1]=sentences[random_pos]
+        sentences[random_pos]=tmp
+    }
+}
+
 
 function gengshuang(n, b) {
     paragraphs = Math.floor((Math.random() * 3 + 3))
@@ -123,11 +136,12 @@ function gengshuang(n, b) {
     var answer = "<b>耿爽：</b>"
     var index = Math.floor((Math.random() * head.length))
     answer += head[index]
+    shuffle(sentences)
+    index=0
     for (i = 0; i < paragraphs; i++) {
         length = Math.floor((Math.random() * 3 + 3))
         for (j = 0; j < length; j++) {
-            index = Math.floor((Math.random() * sentences.length))
-            answer += sentences[index]
+            answer += sentences[index++]
         }
         answer += "<br><br>"
     }
