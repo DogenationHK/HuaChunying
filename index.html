@@ -14,13 +14,18 @@
 
 <body>
     <h1>Geng Shuang <br/>Emulator</h1>
-    <small class="label">发言对象：</small><input type="text" id="1">
-    <small class="label">对方干了什么事情：</small><input type="text" id="2">
-    <small class="label">态度：</small>
-    <input type="radio" name ="attitude", id="r1" value="support"><label for="support">支持</label>
-    <input type="radio" name ="attitude", id="r2" value="condemn" checked><label for="condemn">谴责</label>
+    <small class="label" id="label-lang">语言</small>
+    <select id="lang" onchange="changeLang(this.value)">
+        <option value="sc">简体</option>
+        <option value="tc">繁體</option>
+    </select>
+    <small class="label" id="label-n">发言对象：</small><input type="text" id="1">
+    <small class="label" id="label-b">对方干了什么事情：</small><input type="text" id="2">
+    <small class="label" id="label-attitude">态度：</small>
+    <input type="radio" name ="attitude" id="r1" value="support"><label for="support" id="label-support">支持</label>
+    <input type="radio" name ="attitude" id="r2" value="condemn" checked><label for="condemn" id="label-condemn">谴责</label>
     <div class="actions">
-        <div class="button clickable" onclick="generate()">外交部发言人耿爽答记者问</div>
+        <div class="button clickable" id="btn-generate" onclick="generate()">外交部发言人耿爽答记者问</div>
         <img class="shuffle clickable" onclick="random()" src="shuffle.svg">
     </div>
     <div id="text"></div>
