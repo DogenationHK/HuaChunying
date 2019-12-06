@@ -249,7 +249,7 @@ var head, sentences, lang;
 
 function shuffle(sentences){
     for (var i =sentences.length;i>0;i--){
-        var random_pos=Math.floor(Math.random(i))
+        var random_pos=Math.floor(Math.random()*i)
         var tmp=sentences[i-1]
         sentences[i-1]=sentences[random_pos]
         sentences[random_pos]=tmp
