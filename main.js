@@ -297,7 +297,7 @@ function renderText() {
     labelCondemn.innerText = (lang === "sc") ? "谴责" : "譴責"
 
     var btnGenerate = document.getElementById("btn-generate")
-    btnGenerate.innerText = (lang === "sc") ? "外交部发言人耿爽答记者问" : "外交部發言人耿爽答記者問"
+    btnGenerate.innerText = (lang === "sc") ? "外交部发言人华春莹答记者问" : "外交部發言人華春瑩答記者問"
 }
 
 lang = localStorage.getItem("lang") ? localStorage.getItem("lang") : "sc"
